@@ -14,20 +14,11 @@ class Node
     }
 };
 
-void insert_at_tail(Node* &head, int val)
+void insert_at_head(Node* &head, int val)
 {
     Node* newnode = new Node(val);
-    
-    if(head ==NULL){
-        head = newnode;
-        return;
-    }
-    
-    Node* tmp = head;
-    while(tmp->next != NULL){
-        tmp = tmp->next; 
-    }
-    tmp->next = newnode;
+    newnode->next = head;
+    head = newnode;
 }
 
 void print_linked_list(Node* head)
@@ -49,7 +40,7 @@ int main() {
    head->next=a;
    a->next = b;
    
-   insert_at_tail(head, 100);
+   insert_at_head(head, 100);
    print_linked_list(head);
    
     return 0;
