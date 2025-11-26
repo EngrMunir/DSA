@@ -1,0 +1,71 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Node
+{
+    public:
+        int val;
+        Node* next;
+    Node(int val)
+    {
+        this->val = val;
+        this->next = NULL;
+    }
+};
+
+class myQueue
+{
+    public:
+    Node* head = NULL;
+    Node* tail = NULL;
+    int ss =0;
+    
+    void push(int val)
+    {
+        Node* newnode = new Node(val);
+        ss++;
+        if(head == NULL)
+        {
+            head = newnode;
+            tail = newnode;
+            return;
+        }
+        tail->next = newnode;
+        tail = newnode;
+    }
+    
+    void pop()
+    {
+        Node* deleteNode = head;
+        head = head->next;
+        delete deleteNode;
+        ss--;
+        if(head ==NULL){
+            tail =NULL;
+        }
+    }
+    
+    int front()
+    {
+        return head->val;
+    }
+    int back()
+    {
+        return tail->val;
+    }
+    int size()
+    {
+        return ss;
+    }
+    bool empty()
+    {
+        return head == NULL;
+    }
+};
+
+int main() {
+    
+
+    return 0;
+}
