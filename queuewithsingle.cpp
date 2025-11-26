@@ -65,7 +65,16 @@ class myQueue
 };
 
 int main() {
-    
+    myQueue q;
+    int n;
+    cin >> n;
+    for(int i=0; i<n;i++)
+    {
+        int val;
+        cin>>val;
+        q.push(val);
+    }
+    cout <<q.front() <<" "<<q.back() <<" "<<q.size() <<endl;
 
     return 0;
 }
